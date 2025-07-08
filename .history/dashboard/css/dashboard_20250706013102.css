@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #181c20;
+  color: #f4f6f8;
+}
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: #23272e;
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 4px 0 0 #00e0c6;
+  border-right: 4px solid #00e0c6;
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #00e0c6;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin: 20px 0;
+}
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 0;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: "Press Start 2P", cursive;
+}
+.sidebar ul li a:hover {
+  background: #1a1d22;
+  border-left: 4px solid #00e0c6;
+  color: #00e0c6;
+}
+.main-content {
+  margin-left: 240px;
+  padding: 40px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 30px;
+}
+.card {
+  background: #23272e;
+  border-radius: 0;
+  box-shadow: 0 4px 0 #00e0c6, 0 2px 16px rgba(0, 224, 198, 0.08);
+  padding: 32px 24px;
+  border: 2px solid #00e0c6;
+  color: #fff;
+  font-family: "Press Start 2P", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+}
+.card:hover {
+  box-shadow: 0 8px 0 #00e0c6, 0 4px 32px rgba(0, 224, 198, 0.18);
+  border-color: #fff;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #00e0c6;
+  margin-bottom: 16px;
+}
+.card p {
+  font-size: 13px;
+  color: #b2dfdb;
+}
+
+/* Pixel-style button */
+.btn-pixel {
+  font-family: "Press Start 2P", cursive;
+  background: #00e0c6;
+  color: #23272e;
+  border: 2px solid #fff;
+  padding: 10px 24px;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 #fff;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-pixel:hover {
+  background: #fff;
+  color: #00e0c6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23272e;
+}
+::-webkit-scrollbar-thumb {
+  background: #00e0c6;
+}

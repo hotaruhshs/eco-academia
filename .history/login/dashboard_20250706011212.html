@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <img src="images/leaf.svg" alt="Eco Academia Logo" height="40" style="image-rendering: pixelated" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <header>
+          <h1>Welcome to Your Dashboard</h1>
+        </header>
+        <section class="widgets">
+          <div class="widget">
+            <h2>Statistics</h2>
+            <p id="stats">Loading...</p>
+          </div>
+          <div class="widget">
+            <h2>Recent Activity</h2>
+            <ul id="activity-list">
+              <li>Loading...</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

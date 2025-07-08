@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-logo">
+          <img
+            src="images/leaf.svg"
+            alt="Eco Academia Logo"
+            height="48"
+            style="image-rendering: pixelated"
+          />
+        </div>
+        <h2>Welcome to Eco Academia</h2>
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="input-group" style="margin-top: -10px; margin-bottom: 10px;">
+            <input type="checkbox" id="showPassword" style="width: auto;" />
+            <label for="showPassword" style="display: inline; font-size: 0.9em;">Show Password</label>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="loginMessage"></div>
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+    <script>
+      document.getElementById('showPassword').addEventListener('change', function() {
+        const pwd = document.getElementById('password');
+        pwd.type = this.checked ? 'text' : 'password';
+      });
+    </script>
+  </body>
+</html>

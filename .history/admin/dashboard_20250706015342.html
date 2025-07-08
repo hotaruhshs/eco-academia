@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <img
+            src="images/leaf.svg"
+            alt="Logo"
+            width="28"
+            height="28"
+            style="image-rendering: pixelated"
+          />
+        </div>
+        <span class="sidebar-title">Eco Academia</span>
+      </div>
+      <div class="sidebar-section">
+        <ul>
+          <li><a href="#"><span>🏠</span> Dashboard</a></li>
+          <li><a href="#"><span>📅</span> Schedule</a></li>
+          <li><a href="#"><span>📝</span> Notes</a></li>
+          <li><a href="#"><span>📦</span> Products</a></li>
+          <li><a href="#"><span>📊</span> Report</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-section-title">RECORDS</div>
+        <ul>
+          <li><a href="#"><span>👥</span> Team</a></li>
+          <li><a href="#"><span>🧑‍💼</span> Clients</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-section">
+        <ul>
+          <li><a href="#"><span>⚙️</span> Settings</a></li>
+          <li><a href="#"><span>💬</span> Support</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-profile">
+        <div class="sidebar-profile-img">
+          <img
+            src="images/leaf.svg"
+            alt="Profile"
+            width="28"
+            height="28"
+            style="image-rendering: pixelated"
+          />
+        </div>
+        <div class="sidebar-profile-info">
+          <span class="sidebar-profile-name">Brooklyn Simmons</span>
+          <span class="sidebar-profile-email">simmons@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-content">
+      <h1>Welcome to your Dashboard</h1>
+      <div class="metrics-cards">
+        <div class="card metric-card">
+          <h3>Students</h3>
+          <p class="metric-value">128</p>
+        </div>
+        <div class="card metric-card">
+          <h3>Quizzes</h3>
+          <p class="metric-value">24</p>
+        </div>
+        <div class="card metric-card">
+          <h3>Recent Activity</h3>
+          <table class="activity-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Action</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice</td>
+                <td>Completed Quiz 3</td>
+                <td>2025-07-05</td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>Joined</td>
+                <td>2025-07-04</td>
+              </tr>
+              <tr>
+                <td>Charlie</td>
+                <td>Submitted Assignment</td>
+                <td>2025-07-03</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="charts-section">
+        <canvas id="progressChart" width="400" height="180"></canvas>
+      </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

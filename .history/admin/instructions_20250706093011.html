@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - Admin Panel</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Login</a>
+        <a href="#" class="active">Instructions</a>
+    </nav>
+    <main class="instructions-container">
+        <h1>Rules for Static HTML/CSS/JavaScript Admin Panel Prototype</h1>
+        <section>
+            <h2>General</h2>
+            <ul>
+                <li>The project must use only static HTML, CSS, and JavaScript (no backend or server-side code).</li>
+                <li>All pages should be responsive and work well on desktop and mobile devices.</li>
+                <li>Use semantic HTML5 elements for structure and accessibility.</li>
+                <li>Organize files into logical folders (e.g., <code>css/</code>, <code>js/</code>, <code>images/</code>, <code>pages/</code>).</li>
+                <li>When editing or adding styles, always update the relevant CSS file in the <code>css/</code> folder. Do not use <code>&lt;style&gt;</code> tags in HTML files if a CSS file exists for that page.</li>
+                <li><strong>Do not use inline CSS (<code>style</code> attributes) in HTML files. All styles must be placed in the appropriate CSS file.</strong></li>
+                <li>When editing or adding scripts, always update the relevant JavaScript file in the <code>js/</code> folder. Do not use <code>&lt;script&gt;</code> tags in HTML files if a JS file exists for that page.</li>
+                <li>Use consistent naming conventions for files, classes, and IDs.</li>
+                <li>Comment code where necessary for clarity.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Pages</h2>
+            <ul>
+                <li><strong>Login:</strong>
+                    <ul>
+                        <li>Simple login form (username and password fields, login button).</li>
+                        <li>No real authentication; simulate login with JavaScript.</li>
+                        <li>Redirect to dashboard on successful (simulated) login.</li>
+                    </ul>
+                </li>
+                <li><strong>Dashboard:</strong>
+                    <ul>
+                        <li>Overview of key metrics (e.g., student count, quizzes, recent activity).</li>
+                        <li>Use cards, charts, or tables for data visualization (static or with sample data).</li>
+                    </ul>
+                </li>
+                <li><strong>Student Tracking:</strong>
+                    <ul>
+                        <li>List of students with basic info (name, status, progress).</li>
+                        <li>Ability to filter/search students (client-side only).</li>
+                        <li>Option to view more details in a modal or separate page.</li>
+                    </ul>
+                </li>
+                <li><strong>Quiz Manager:</strong>
+                    <ul>
+                        <li>List of quizzes with title, status, and actions (edit, delete, view).</li>
+                        <li>Form to add/edit quizzes (fields: title, description, questions, etc.).</li>
+                        <li>All data is static or stored in browser memory (e.g., localStorage).</li>
+                    </ul>
+                </li>
+                <li><strong>Reports:</strong>
+                    <ul>
+                        <li>Display static or sample reports (charts, tables, summaries).</li>
+                        <li>Allow filtering by date, student, or quiz (client-side only).</li>
+                    </ul>
+                </li>
+                <li><strong>Settings:</strong>
+                    <ul>
+                        <li>Form for updating profile info, password, and preferences.</li>
+                        <li>No real persistence; changes are not saved beyond the session.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>UI/UX</h2>
+            <ul>
+                <li>Use a modern, clean, and intuitive design.</li>
+                <li>Navigation should be clear and consistent across all pages.</li>
+                <li>Use a sidebar or top navigation bar for main sections.</li>
+                <li>Provide feedback for user actions (e.g., button clicks, form submissions).</li>
+                <li>Use modals or toasts for notifications and confirmations.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>JavaScript</h2>
+            <ul>
+                <li>Use vanilla JavaScript (no frameworks like React, Vue, or Angular).</li>
+                <li>Organize scripts by page or feature.</li>
+                <li>Use event listeners for interactivity (e.g., form validation, navigation, filtering).</li>
+                <li>Store temporary data in memory or localStorage if needed.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Assets</h2>
+            <ul>
+                <li>Use royalty-free or open-source icons and images.</li>
+                <li>Optimize images for web use.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Documentation</h2>
+            <ul>
+                <li>Include a <code>README.md</code> with instructions for running and navigating the prototype.</li>
+                <li>Document any assumptions or limitations.</li>
+            </ul>
+        </section>
+        <hr>
+        <p>These rules ensure a maintainable, user-friendly, and realistic admin panel prototype using only static web technologies.</p>
+    </main>
+</body>
+</html>

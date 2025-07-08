@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div
+        class="hamburger"
+        id="hamburgerMenu"
+        aria-label="Open navigation"
+        tabindex="0"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <h2>Eco Academia</h2>
+      <ul id="sidebarLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Tasks</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <h1>Welcome to your Dashboard</h1>
+      <div class="metrics-cards">
+        <div class="card metric-card">
+          <h3>Students</h3>
+          <p class="metric-value">128</p>
+        </div>
+        <div class="card metric-card">
+          <h3>Quizzes</h3>
+          <p class="metric-value">24</p>
+        </div>
+        <div class="card metric-card">
+          <h3>Recent Activity</h3>
+          <table class="activity-table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Action</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alice</td>
+                <td>Completed Quiz 3</td>
+                <td>2025-07-05</td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>Joined</td>
+                <td>2025-07-04</td>
+              </tr>
+              <tr>
+                <td>Charlie</td>
+                <td>Submitted Assignment</td>
+                <td>2025-07-03</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="charts-section">
+        <canvas id="progressChart" width="400" height="180"></canvas>
+      </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>

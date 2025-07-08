@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background: #2e7d32;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+}
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    margin: 20px 0;
+}
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    display: block;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.sidebar ul li a:hover {
+    background: #388e3c;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+}
+header h1 {
+    margin: 0 0 30px 0;
+    font-size: 2em;
+    color: #2e7d32;
+}
+.cards {
+    display: flex;
+    gap: 30px;
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 30px 40px;
+    flex: 1;
+    text-align: center;
+}
+.card h3 {
+    margin: 0 0 10px 0;
+    color: #388e3c;
+}
+.card p {
+    font-size: 2em;
+    margin: 0;
+    color: #2e7d32;
+}

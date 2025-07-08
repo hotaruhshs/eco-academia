@@ -1,0 +1,206 @@
+/* Pixel art nature theme login page */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  /* Pixel sky with clouds and grass */
+  background: linear-gradient(to bottom, #b3e0ff 0 60%, #a8e063 60% 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 80px;
+  height: 32px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff 0 16px,
+    transparent 16px 32px
+  );
+  opacity: 0.7;
+  border-radius: 16px;
+  filter: blur(0.5px);
+  z-index: 0;
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 60px;
+  height: 24px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff 0 12px,
+    transparent 12px 24px
+  );
+  opacity: 0.6;
+  border-radius: 12px;
+  filter: blur(0.5px);
+  z-index: 0;
+}
+
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.login-card {
+  background: #fff;
+  border: 4px solid #388e3c;
+  border-radius: 0;
+  box-shadow: 0 0 0 8px #a8e063, 0 8px 32px rgba(56, 142, 60, 0.15);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  image-rendering: pixelated;
+}
+
+.login-logo img {
+  margin-bottom: 1rem;
+  image-rendering: pixelated;
+}
+
+h2 {
+  color: #388e3c;
+  margin-bottom: 1.5rem;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #388e3c;
+  font-weight: 500;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  font-size: 0.7rem;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.6rem;
+  border: 2.5px solid #c8e6c9;
+  border-radius: 0;
+  font-size: 0.7rem;
+  background: #f1f8e9;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  image-rendering: pixelated;
+  transition: border 0.2s;
+  margin: 0;
+}
+
+.input-group input:focus {
+  border: 2.5px solid #388e3c;
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.7rem;
+  background: #fff;
+  color: #388e3c;
+  border: 3px solid #388e3c;
+  border-radius: 0;
+  font-size: 1rem;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.08);
+  image-rendering: pixelated;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  outline: 2px solid #a8e063;
+  outline-offset: -6px;
+}
+
+button[type="submit"]:hover {
+  background: #388e3c;
+  color: #fff;
+  border-color: #a8e063;
+  outline: 2px solid #388e3c;
+}
+
+button[type="submit"]::before {
+  content: "▶ ";
+  color: #a8e063;
+  font-size: 1rem;
+  position: relative;
+  left: -2px;
+  top: 0;
+}
+
+#loginMessage {
+  margin-top: 1rem;
+  color: #d32f2f;
+  min-height: 1.2em;
+  font-family: "Press Start 2P", "Consolas", monospace;
+  font-size: 0.8rem;
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  padding-right: 2.2rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #388e3c;
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.toggle-password:focus {
+  outline: 2px solid #a8e063;
+}
+
+.toggle-password svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 500px) {
+  .login-card {
+    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
+    max-width: 95vw;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");

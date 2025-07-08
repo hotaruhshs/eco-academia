@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia Login</title>
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-logo">
+          <img
+            src="images/leaf.svg"
+            alt="Eco Academia Logo"
+            height="48"
+            style="image-rendering: pixelated"
+          />
+        </div>
+        <h2>Welcome to Eco Academia</h2>
+        <form id="loginForm">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <button
+              type="button"
+              id="togglePassword"
+              aria-label="Show password"
+              style="
+                margin-top: 6px;
+                font-size: 0.7rem;
+                padding: 0.2rem 0.5rem;
+                float: right;
+                background: #f1f8e9;
+                border: 1.5px solid #c8e6c9;
+                color: #388e3c;
+                cursor: pointer;
+                font-family: 'Press Start 2P', 'Consolas', monospace;
+              "
+            >
+              Show
+            </button>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="loginMessage"></div>
+      </div>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>
