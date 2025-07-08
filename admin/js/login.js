@@ -45,7 +45,7 @@ loginForm.addEventListener('submit', function(e) {
         loginMessage.style.color = '#388e3c';
         loginMessage.textContent = 'Login successful! Redirecting...';
         setTimeout(() => {
-            window.location.href = 'dashboard.html'; // Placeholder redirect
+            window.location.href = 'admin/dashboard.html'; // Corrected redirect path
         }, 1200);
     } else {
         loginMessage.style.color = '#d32f2f';
