@@ -1,0 +1,708 @@
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+.quiz-actions .btn {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.search-filter {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Quiz Manager Styles */
+.main-content {
+    margin-left: 260px !important;
+    padding: 32px !important;
+    max-width: none !important;
+    width: calc(100vw - 260px) !important;
+    box-sizing: border-box !important;
+    background: #f0f4f8 !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+}
+
+.container-fluid {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-header h1 {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 18px !important;
+    color: #1e293b !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.content-header p {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Quiz Actions */
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.quiz-actions .btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-weight: normal !important;
+    box-shadow: 2px 2px 0 #334155 !important;
+    transition: all 0.2s ease !important;
+}
+
+.quiz-actions .btn:hover {
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 3px 3px 0 #334155 !important;
+}
+
+.search-filter {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.search-filter input,
+.search-filter select {
+    min-width: 200px;
+    flex: 1;
+    background: #ffffff !important;
+    border: 2px solid #334155 !important;
+    border-radius: 0 !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    padding: 12px !important;
+    color: #1e293b !important;
+    box-shadow: 2px 2px 0 #cbd5e1 !important;
+    transition: all 0.2s ease !important;
+}
+
+.search-filter input {
+    flex: 2; /* Make search input take more space */
+}
+
+.search-filter select {
+    flex: 1; /* Filter takes less space */
+}
+
+.search-filter input:focus,
+.search-filter select:focus {
+    border-color: #10b981 !important;
+    box-shadow: 4px 4px 0 #10b981 !important;
+    outline: none !important;
+    transform: translate(-2px, -2px) !important;
+}
+
+/* Quiz List */
+.quiz-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-list-header h2 {
+    color: #1e293b !important;
+    margin: 0;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-count {
+    color: #64748b !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Quiz Card */
+.quiz-card {
+    background: #ffffff !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 #3b82f6, 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border: 2px solid #334155 !important;
+    padding: 1.5rem;
+    transition: all 0.2s ease !important;
+    position: relative;
+}
+
+.quiz-card:hover {
+    box-shadow: 6px 6px 0 #3b82f6, 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+    transform: translate(-2px, -2px) !important;
+}
+
+.quiz-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.quiz-title {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 12px !important;
+    color: #1e293b !important;
+    margin: 0;
+    line-height: 1.4;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-description {
+    color: #64748b !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #64748b !important;
+}
+
+.quiz-meta-item .icon {
+    font-size: 10px !important;
+}
+
+.quiz-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0 !important;
+}
+
+.quiz-stat {
+    text-align: center;
+}
+
+.quiz-stat-value {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 16px !important;
+    font-weight: normal !important;
+    color: #1e293b !important;
+}
+
+.quiz-stat-label {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.quiz-actions-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.quiz-actions-buttons .btn {
+    flex: 1;
+    padding: 0.5rem;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 2px 2px 0 #334155 !important;
+    transition: all 0.2s ease !important;
+}
+
+.quiz-actions-buttons .btn:hover {
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 3px 3px 0 #334155 !important;
+}
+
+/* Modal and Form Styles */
+.modal-title {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.modal-body {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+}
+
+.form-label {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    color: #64748b !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.form-control,
+.form-select {
+    background: #ffffff !important;
+    border: 2px solid #334155 !important;
+    border-radius: 0 !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    padding: 12px !important;
+    color: #1e293b !important;
+    box-shadow: 2px 2px 0 #cbd5e1 !important;
+    transition: all 0.2s ease !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #10b981 !important;
+    box-shadow: 4px 4px 0 #10b981 !important;
+    outline: none !important;
+    transform: translate(-2px, -2px) !important;
+}
+
+.modal-footer .btn {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 2px 2px 0 #334155 !important;
+    transition: all 0.2s ease !important;
+}
+
+.modal-footer .btn:hover {
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 3px 3px 0 #334155 !important;
+}
+
+/* Question Form Styles */
+.question-item {
+    border: 1px solid #dee2e6;
+    margin-bottom: 1rem;
+}
+
+.question-item .card-body {
+    padding: 1rem;
+}
+
+.question-number {
+    color: #495057;
+    font-weight: 600;
+    margin: 0;
+}
+
+.delete-question {
+    padding: 0.25rem 0.5rem;
+}
+
+.option-item {
+    margin-bottom: 0.5rem;
+}
+
+.option-item input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.options-container {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Modal Customizations */
+.modal-lg {
+    max-width: 800px;
+}
+
+.modal-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem;
+    color: #6c757d;
+}
+
+.empty-state .icon {
+    font-size: 32px !important;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-state h3 {
+    color: #1e293b !important;
+    margin-bottom: 0.5rem;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.empty-state p {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* View Quiz Modal Styles */
+#viewQuizModal .modal-content {
+    border: 2px solid #334155 !important;
+    border-radius: 0 !important;
+    background: #f8fafc !important;
+}
+
+#viewQuizModal .modal-header {
+    background: #1e293b !important;
+    border-bottom: 2px solid #334155 !important;
+    border-radius: 0 !important;
+}
+
+#viewQuizModal .modal-title {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 12px !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+#viewQuizModal .modal-body {
+    padding: 20px !important;
+}
+
+#viewQuizModal .quiz-info {
+    background: #e2e8f0 !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0 !important;
+    padding: 15px !important;
+}
+
+#viewQuizModal .quiz-info strong {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    color: #1e293b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+#viewQuizModal .questions-section h5 {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 12px !important;
+    color: #1e293b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 20px !important;
+    margin-top: 30px !important;
+}
+
+#viewQuizModal .card {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 0 !important;
+    background: #ffffff !important;
+}
+
+#viewQuizModal .card-title {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    color: #1e293b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 10px !important;
+}
+
+#viewQuizModal .card-text {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    color: #475569 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 10px !important;
+}
+
+#viewQuizModal .text-muted {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 7px !important;
+    color: #64748b !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+#viewQuizModal .list-group-item {
+    background: #f1f5f9 !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 0 !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    color: #334155 !important;
+    padding: 8px 12px !important;
+}
+
+#viewQuizModal .list-group-item strong {
+    color: #059669 !important;
+}
+
+#viewQuizModal .alert-info {
+    background: #dbeafe !important;
+    border: 1px solid #3b82f6 !important;
+    border-radius: 0 !important;
+    color: #1e40af !important;
+}
+
+#viewQuizModal .alert-info h6 {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    color: #1e40af !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 10px !important;
+}
+
+#viewQuizModal .alert-info p {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    color: #1e40af !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+}
+
+#viewQuizModal .modal-footer {
+    border-top: 2px solid #334155 !important;
+    background: #f8fafc !important;
+}
+
+#viewQuizModal .btn-secondary {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    background: #64748b !important;
+    border: 1px solid #475569 !important;
+    border-radius: 0 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 8px 16px !important;
+}
+
+#viewQuizModal .btn-secondary:hover {
+    background: #475569 !important;
+    border-color: #334155 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .main-content {
+        margin-left: 260px !important;
+        width: calc(100vw - 260px) !important;
+        max-width: calc(100vw - 260px) !important;
+        overflow-x: hidden !important;
+    }
+    
+    .quiz-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+    
+    .search-filter input,
+    .search-filter select {
+        min-width: 100px;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding: 16px !important;
+    }
+    
+    .quiz-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .search-filter {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+    
+    .search-filter input,
+    .search-filter select {
+        min-width: auto;
+        max-width: none;
+        width: 100%;
+        flex: 1;
+    }
+    
+    .quiz-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .quiz-card {
+        padding: 1rem;
+    }
+    
+    .quiz-actions-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .quiz-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .quiz-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Animation for new cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quiz-card.new {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Loading state */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    color: #6c757d;
+}
+
+.loading::before {
+    content: "⏳";
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages */
+.alert {
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Form Validation */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Category badges */
+.category-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #e9ecef;
+    color: #495057;
+}

@@ -1,0 +1,877 @@
+/* Users Page Specific Styles */
+
+/* Main content adjustments for users page */
+.main-content {
+  margin-left: 250px !important;
+  padding: 20px !important;
+  background: #f8fafc !important;
+  min-height: 100vh !important;
+  transition: margin-left 0.3s ease !important;
+}
+
+.main-content h1 {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 18px !important;
+  color: #1e293b !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.nav-icon {
+  font-size: 16px !important;
+  width: 24px !important;
+  height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 0 !important;
+  font-style: normal !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-item:hover .nav-icon {
+  background: #e2e8f0 !important;
+  border-color: #94a3b8 !important;
+}
+
+.nav-item.active .nav-icon {
+  background: #ffffff !important;
+  border-color: #334155 !important;
+  box-shadow: 1px 1px 0 #334155 !important;
+}
+
+.nav-text {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* Main content layout adjustments - preserve sidebar layout */
+.main-content {
+  margin-left: 260px !important; /* Preserve sidebar space */
+  padding: 32px !important; /* Preserve dashboard padding */
+  max-width: none !important;
+  width: calc(100vw - 260px) !important; /* Account for sidebar */
+  box-sizing: border-box !important;
+  background: #f0f4f8 !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100vh !important; /* Full viewport height */
+  overflow: hidden !important; /* Prevent scrolling on main content */
+}
+
+.container-fluid {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  padding-bottom: 0 !important; /* Remove bottom padding */
+  height: 100% !important; /* Use full height */
+  overflow: hidden !important; /* Prevent container overflow */
+  max-height: 100vh !important; /* Ensure container doesn't exceed viewport */
+}
+
+/* Controls Section */
+.controls-section {
+  margin-bottom: 8px; /* Slightly increased margin for better spacing */
+  flex-shrink: 0 !important; /* Prevent controls from shrinking */
+}
+
+.search-container, .filter-container {
+  margin-bottom: 12px; /* Increased margin for better spacing */
+}
+
+.search-input, .status-filter, .progress-filter {
+  background: #ffffff !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  padding: 12px !important;
+  color: #1e293b !important;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+  transition: all 0.2s ease !important;
+}
+
+.search-input:focus, .status-filter:focus, .progress-filter:focus {
+  border-color: #10b981 !important;
+  box-shadow: 4px 4px 0 #10b981 !important;
+  outline: none !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.form-label {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.form-text {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  color: #94a3b8 !important;
+  margin-top: 4px !important;
+}
+
+/* Stats Section */
+.stats-section {
+  margin-bottom: 8px; /* Slightly increased margin for better spacing */
+  flex-shrink: 0 !important; /* Prevent stats from shrinking */
+}
+
+.stat-card {
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #3b82f6, 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border: 2px solid #334155 !important;
+  margin-bottom: 8px !important; /* Increased margin for better spacing */
+  transition: all 0.2s ease !important;
+  height: 90px !important; /* Slightly increased height for better proportion */
+}
+
+.stat-card:hover {
+  box-shadow: 6px 6px 0 #3b82f6, 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.stat-card .card-body {
+  padding: 10px !important; /* Slightly increased padding for better spacing */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.stat-card .card-title {
+  font-size: 8px !important; /* Slightly larger title size */
+  margin-bottom: 6px !important; /* Slightly increased margin */
+}
+
+.stat-value {
+  font-size: 16px !important; /* Slightly larger value size */
+  font-weight: normal !important;
+  color: #1e293b !important;
+  margin: 0 !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Users Table */
+.table-section {
+  flex-grow: 1 !important; /* Allow table to grow and fill available space */
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important; /* Allow flex child to shrink if needed */
+  height: 100% !important; /* Use full available height */
+  max-height: calc(100vh - 180px) !important; /* More space without pagination */
+}
+
+.users-table-card {
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #f59e0b, 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border: 2px solid #334155 !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important; /* Allow card to grow and fill available space */
+  min-height: 0 !important; /* Allow flex child to shrink properly */
+  max-height: calc(100vh - 240px) !important; /* More space without pagination */
+}
+
+.users-table-card:hover {
+  box-shadow: 6px 6px 0 #f59e0b, 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.card-header {
+  background: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding: 12px 24px !important; /* Reduced padding to save space */
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-shrink: 0 !important; /* Prevent header from shrinking */
+}
+
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+}
+
+.add-user-btn {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  padding: 8px 12px !important;
+  border: 2px solid #10b981 !important;
+  border-radius: 0 !important;
+  background: #10b981 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 2px 2px 0 #059669 !important;
+}
+
+.add-user-btn:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 #047857 !important;
+}
+
+.btn-icon {
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+.users-table-card .card-body {
+  padding: 0 !important; /* Remove padding to let table fill the space */
+  flex-grow: 1 !important; /* Allow body to grow and fill available space */
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important; /* Allow flex child to shrink */
+  height: 100% !important; /* Use full available height */
+}
+
+.table-responsive {
+  flex-grow: 1 !important; /* Allow table container to grow */
+  overflow-y: auto !important; /* Enable vertical scrolling if needed */
+  margin-bottom: 0 !important;
+  padding: 0 24px 24px 24px !important; /* Increased bottom padding for better spacing */
+  padding-top: 0 !important; /* No top padding since header has padding */
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important; /* Use full available height */
+  max-height: calc(100vh - 280px) !important; /* More space without pagination */
+}
+
+.results-info {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  color: #64748b !important;
+}
+
+.users-table {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important; /* Fill available height */
+  display: table !important; /* Changed from flex to table for proper alignment */
+  table-layout: fixed !important; /* Fixed table layout for consistent column widths */
+}
+
+/* Table header */
+.users-table thead {
+  display: table-header-group !important; /* Proper table header display */
+}
+
+/* Table body fills remaining space */
+.users-table tbody {
+  display: table-row-group !important; /* Proper table body display */
+}
+
+/* Individual rows in tbody */
+.users-table tbody tr {
+  display: table-row !important; /* Proper table row display */
+  min-height: 70px !important; /* Reduced row height for better fit */
+}
+
+/* Header row should also use flex layout */
+.users-table thead tr {
+  display: table-row !important; /* Proper table header row display */
+  min-height: 60px !important; /* Reduced header height */
+}
+
+.users-table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.users-table th {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  padding: 18px 12px !important; /* Reduced padding for better fit */
+  vertical-align: middle !important;
+  display: table-cell !important; /* Proper table cell display */
+  text-align: center !important;
+  width: auto !important; /* Let table handle column widths */
+}
+
+.users-table td {
+  border: 1px solid #e2e8f0 !important;
+  padding: 18px 12px !important; /* Reduced padding for better fit */
+  vertical-align: middle !important;
+  display: table-cell !important; /* Proper table cell display */
+  text-align: center !important;
+  width: auto !important; /* Let table handle column widths */
+}
+
+/* Specific column widths */
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+  width: 25% !important; /* Name column wider */
+  text-align: left !important;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+  width: 25% !important; /* Email column wider */
+  text-align: left !important;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+  width: 15% !important; /* Status column */
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+  width: 15% !important; /* Progress column */
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+  width: 15% !important; /* Join Date column */
+}
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+  width: 15% !important; /* Actions column */
+}
+
+/* Add alternating row colors to make table more visually filled */
+.users-table tbody tr:nth-child(even) {
+  background-color: #f8fafc !important;
+}
+
+.users-table tbody tr:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.sort-btn {
+  background: none !important;
+  border: none !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  transition: color 0.2s ease !important;
+}
+
+.sort-btn:hover {
+  color: #10b981 !important;
+}
+
+.sort-arrow {
+  font-size: 8px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.sort-btn.active .sort-arrow {
+  color: #10b981 !important;
+}
+
+.sort-btn.desc .sort-arrow {
+  transform: rotate(180deg) !important;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block !important;
+  padding: 4px 8px !important;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+  min-width: 60px !important;
+  text-align: center !important;
+}
+
+.status-badge.active {
+  background: #dcfce7 !important;
+  color: #166534 !important;
+  border-color: #22c55e !important;
+}
+
+.status-badge.inactive {
+  background: #fef2f2 !important;
+  color: #991b1b !important;
+  border-color: #ef4444 !important;
+}
+
+/* Progress Bar */
+.progress-container {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.progress-bar-custom {
+  width: 60px !important;
+  height: 12px !important;
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.progress-fill {
+  height: 100% !important;
+  background: #10b981 !important;
+  transition: width 0.3s ease !important;
+  border-radius: 0 !important;
+}
+
+.progress-fill.low {
+  background: #ef4444 !important;
+}
+
+.progress-fill.medium {
+  background: #f59e0b !important;
+}
+
+.progress-fill.high {
+  background: #10b981 !important;
+}
+
+.progress-text {
+  font-size: 8px !important;
+  color: #64748b !important;
+  min-width: 32px !important;
+  text-align: right !important;
+}
+
+/* Action Buttons */
+.action-btn {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important; /* Reduced to match consistent small size */
+  padding: 8px !important; /* Square padding for icons */
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-right: 4px !important; /* Reduced margin for closer spacing */
+  width: 32px !important; /* Fixed width for consistent size */
+  height: 32px !important; /* Fixed height for square buttons */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-indent: -9999px !important; /* Hide any text content */
+  overflow: hidden !important;
+}
+
+.action-btn:hover {
+  background: #f1f5f9 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0 #334155 !important;
+}
+
+.action-btn.view {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+.action-btn.view::after {
+  content: '' !important;
+  text-indent: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: inline-block !important;
+  filter: grayscale(0) brightness(1) !important;
+}
+
+.action-btn.edit {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+.action-btn.edit::after {
+  content: '' !important;
+  text-indent: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'/%3E%3Cpath d='m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: inline-block !important;
+  filter: grayscale(0) brightness(1) !important;
+}
+
+.action-btn.delete {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+}
+
+.action-btn.delete::after {
+  content: '' !important;
+  text-indent: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='3,6 5,6 21,6'/%3E%3Cpath d='m19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2'/%3E%3Cline x1='10' y1='11' x2='10' y2='17'/%3E%3Cline x1='14' y1='11' x2='14' y2='17'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: inline-block !important;
+  filter: grayscale(0) brightness(1) !important;
+}
+
+/* Modal Styles */
+.modal-content {
+  background: #ffffff !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 #334155 !important;
+}
+
+.modal-header {
+  background: #f8fafc !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  padding: 16px 24px !important;
+}
+
+.modal-title {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  margin: 0 !important;
+}
+
+.modal-body {
+  padding: 24px !important;
+}
+
+.btn-close {
+  background: none !important;
+  border: none !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.btn-close:before {
+  content: "×" !important;
+  font-size: 24px !important;
+  color: #64748b !important;
+}
+
+/* User Detail Cards in Modal */
+.user-detail-card {
+  background: #f8fafc !important;
+  border: 2px solid #e2e8f0 !important;
+  border-radius: 0 !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.user-detail-card h6 {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+}
+
+.user-detail-card p {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  margin: 0 !important;
+}
+
+/* Form elements in modal */
+.modal-body .form-control,
+.modal-body .form-select {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  background: #ffffff !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  padding: 8px !important;
+  color: #1e293b !important;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+  transition: all 0.2s ease !important;
+}
+
+.modal-body .form-control:focus,
+.modal-body .form-select:focus {
+  border-color: #10b981 !important;
+  box-shadow: 4px 4px 0 #10b981 !important;
+  outline: none !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.modal-body .form-label {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #64748b !important;
+  margin-bottom: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+/* Modal footer buttons */
+.modal-footer .btn {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  padding: 8px 16px !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.2s ease !important;
+  margin-left: 8px !important;
+}
+
+.modal-footer .btn-primary {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 2px 2px 0 #1e40af !important;
+}
+
+.modal-footer .btn-primary:hover {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 #1e40af !important;
+}
+
+.modal-footer .btn-secondary {
+  background: #6b7280 !important;
+  color: #ffffff !important;
+  border-color: #6b7280 !important;
+  box-shadow: 2px 2px 0 #4b5563 !important;
+}
+
+.modal-footer .btn-secondary:hover {
+  background: #4b5563 !important;
+  border-color: #4b5563 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 #374151 !important;
+}
+
+.modal-footer .btn-danger {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  box-shadow: 2px 2px 0 #dc2626 !important;
+}
+
+.modal-footer .btn-success {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  box-shadow: 2px 2px 0 #059669 !important;
+}
+
+.modal-footer .btn-success:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 3px 3px 0 #047857 !important;
+}
+
+/* Add user modal specific styles */
+.info-note {
+  background: #f0f9ff !important;
+  border: 2px solid #bae6fd !important;
+  padding: 8px !important;
+  margin-top: 12px !important;
+  border-radius: 0 !important;
+}
+
+.info-note small {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  color: #0284c7 !important;
+  display: block !important;
+  margin: 2px 0 !important;
+}
+
+/* Delete modal specific styles */
+.user-info {
+  background: #f8fafc !important;
+  border: 2px solid #e2e8f0 !important;
+  padding: 12px !important;
+  margin: 12px 0 !important;
+  border-radius: 0 !important;
+}
+
+.user-info p {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  margin: 4px 0 !important;
+}
+
+.alert {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  border: 2px solid #f59e0b !important;
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border-radius: 0 !important;
+  padding: 8px !important;
+  margin: 12px 0 !important;
+}
+
+.alert-warning {
+  border-color: #f59e0b !important;
+  background: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+/* Toast notifications */
+.toast-notification {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: #10b981 !important;
+  color: #ffffff !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  padding: 12px 16px !important;
+  border: 2px solid #059669 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #047857 !important;
+  z-index: 9999 !important;
+  transform: translateX(100%) !important;
+  transition: transform 0.3s ease !important;
+  max-width: 300px !important;
+}
+
+.toast-notification.show {
+  transform: translateX(0) !important;
+}
+
+.toast-notification.success {
+  background: #10b981 !important;
+  border-color: #059669 !important;
+  box-shadow: 4px 4px 0 #047857 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+  
+  .controls-section .col-md-3,
+  .controls-section .col-md-6 {
+    margin-bottom: 16px !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    padding: 20px 10px !important;
+  }
+  
+  .users-table-card {
+    height: 60vh !important;
+    min-height: 300px !important;
+  }
+  
+  .stat-card {
+    height: 120px !important;
+  }
+  
+  .stat-card .card-body {
+    padding: 16px !important;
+  }
+  
+  .stat-card .card-title {
+    font-size: 8px !important;
+  }
+  
+  .stat-value {
+    font-size: 18px !important;
+  }
+  
+  .users-table {
+    font-size: 8px !important;
+  }
+  
+  .users-table th,
+  .users-table td {
+    padding: 8px 6px !important;
+  }
+  
+  .action-btn {
+    font-size: 10px !important;
+    padding: 6px !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+  
+  .card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .users-table-card {
+    height: 50vh !important;
+    min-height: 250px !important;
+  }
+  
+  .stat-card {
+    height: 100px !important;
+  }
+  
+  .stat-card .card-title {
+    font-size: 7px !important;
+  }
+  
+  .stat-value {
+    font-size: 16px !important;
+  }
+  
+  .progress-bar-custom {
+    width: 40px !important;
+  }
+  
+  .progress-text {
+    font-size: 7px !important;
+  }
+  
+  .sort-btn {
+    font-size: 8px !important;
+  }
+  
+  .results-info {
+    font-size: 7px !important;
+  }
+}
