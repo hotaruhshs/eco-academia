@@ -26,13 +26,18 @@
   - Ability to filter/search students (client-side only).
   - Option to view more details in a modal or separate page.
 - **Quiz Manager:**
-  - List of quizzes with title, status, and actions (edit, delete, view).
+  - List of quizzes with title, status, and actions (edit, view).
   - Form to add/edit quizzes (fields: title, description, questions, etc.).
   - All data is static or stored in browser memory (e.g., localStorage).
-- **Reports:**
-  - Display static or sample reports (charts, tables, summaries).
-  - Allow filtering by date, student, or quiz (client-side only).
-- **Settings:**
+  - **Users Score:**
+  - Display user rankings and scores for all minigames and quizzes.
+  - Show individual user profiles with their scores across different activities.
+  - Include columns for username, minigame scores, quiz scores, and total points.
+  - Ability to sort by different criteria (total score, individual game performance, username).
+  - Filter options to view specific minigame or quiz leaderboards.
+  - Use tables or card layouts to display score data clearly.
+  - All score data should be static or sample data stored in memory/localStorage.
+- **Admin Profile:**
   - Form for updating profile info, password, and preferences.
   - No real persistence; changes are not saved beyond the session.
 

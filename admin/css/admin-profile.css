@@ -1,0 +1,173 @@
+/* Admin Profile Specific Styles */
+
+.admin-profile-container {
+  margin-top: 20px;
+}
+
+.profile-card {
+  margin-bottom: 20px;
+}
+
+.profile-form, .password-form, .preferences-form {
+  padding: 10px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.form-control {
+  border-radius: 0 !important;
+  border: 2px solid #334155 !important;
+  padding: 12px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  background-color: #f8fafc !important;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+}
+
+.form-control:focus {
+  border-color: #10b981 !important;
+  box-shadow: 3px 3px 0 #10b981 !important;
+  transform: translateY(-1px);
+}
+
+.form-control:read-only {
+  background-color: #e2e8f0 !important;
+  opacity: 0.8;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.form-check-input {
+  border-radius: 0 !important;
+  border: 2px solid #334155 !important;
+  width: 18px;
+  height: 18px;
+}
+
+.form-check-input:checked {
+  background-color: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+.form-check-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: #1e293b;
+  margin-left: 8px;
+}
+
+.btn {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  border-radius: 0 !important;
+  padding: 12px 24px !important;
+  border: 2px solid #334155 !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.btn-primary {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 3px 3px 0 #334155 !important;
+}
+
+.btn-primary:hover {
+  background-color: #059669 !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 5px 5px 0 #334155 !important;
+}
+
+.btn-primary:active {
+  transform: translate(1px, 1px) !important;
+  box-shadow: 2px 2px 0 #334155 !important;
+}
+
+.btn-outline-primary {
+  background-color: transparent !important;
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #10b981 !important;
+  color: #ffffff !important;
+  box-shadow: 3px 3px 0 #334155 !important;
+}
+
+.form-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* Profile picture styling */
+.profile-picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  background-color: #10b981;
+  border: 3px solid #334155;
+  box-shadow: 4px 4px 0 #334155;
+  border-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 36px;
+  color: white;
+}
+
+.upload-controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make sidebar profile clickable */
+.sidebar-profile {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar-profile.active {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
+/* Password fields styling */
+input[type="password"].form-control {
+  font-family: monospace !important;
+  letter-spacing: 2px;
+}
+
+.password-change-btn {
+  margin-left: 10px;
+  font-size: 9px !important;
+  padding: 8px 16px !important;
+}

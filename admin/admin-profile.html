@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia - Admin Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/admin-profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+      <header class="sidebar-header">
+        <div class="sidebar-title">
+          <span>Eco Academia</span>
+        </div>
+      </header>
+      <nav class="sidebar-content">
+        <section class="sidebar-section">
+          <ul role="list">
+            <li>
+              <a href="dashboard.html"><span class="icon" aria-hidden="true">⬜</span> Dashboard</a>
+            </li>
+            <li>
+              <a href="users.html"><span class="icon" aria-hidden="true">👤</span> Users</a>
+            </li>
+            <li>
+              <a href="quiz-manager.html"><span class="icon" aria-hidden="true">📋</span> Quiz Manager</a>
+            </li>
+            <li>
+              <a href="scores.html"><span class="icon" aria-hidden="true">🏆</span> User Scores</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+      <footer class="sidebar-bottom">
+        <div class="sidebar-profile active">
+          <div class="sidebar-profile-img">
+            <div class="profile-icon" aria-label="Admin Profile">A</div>
+          </div>
+          <div class="sidebar-profile-info">
+            <span class="sidebar-profile-name">Admin Account</span>
+            <span class="sidebar-profile-email">admin@eco-academia.com</span>
+          </div>
+        </div>
+      </footer>
+    </aside>
+    <main class="main-content" role="main">
+      <div class="container-fluid">
+        <header class="row">
+          <div class="col-12">
+            <h1>Admin Profile</h1>
+          </div>
+        </header>
+        <section class="admin-profile-container" aria-label="Admin Profile Information">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+              <div class="card profile-card text-center">
+                <div class="card-body">
+                  <div class="profile-picture-container mb-4 d-flex flex-column align-items-center">
+                    <div class="profile-picture">A</div>
+                    <div class="upload-controls mt-2">
+                      <label for="profile-upload" class="btn btn-outline-primary">Upload New Picture</label>
+                      <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+                    </div>
+                  </div>
+                  <h3 class="card-title">Profile Information</h3>
+                  <form id="profile-form" class="profile-form">
+                    <div class="form-group mb-4 text-start">
+                      <label for="fullName">Full Name</label>
+                      <input type="text" class="form-control" id="fullName" value="Admin User" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group mb-4 text-start">
+                      <label for="email">Email Address</label>
+                      <input type="email" class="form-control" id="email" value="admin@eco-academia.com" placeholder="Enter your email">
+                    </div>
+                    <!-- Role and Phone Number fields removed as requested -->
+                    <div class="form-group mb-4 text-start">
+                      <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                        Change Password
+                      </button>
+                    </div>
+                    <div class="form-action">
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Change Password Modal -->
+          <div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form id="change-password-form">
+                    <div class="mb-3">
+                      <label for="modalCurrentPassword" class="form-label">Current Password</label>
+                      <input type="password" class="form-control" id="modalCurrentPassword" placeholder="Enter your current password">
+                    </div>
+                    <div class="mb-3">
+                      <label for="modalNewPassword" class="form-label">New Password</label>
+                      <input type="password" class="form-control" id="modalNewPassword" placeholder="Enter new password">
+                    </div>
+                    <div class="mb-3">
+                      <label for="modalConfirmPassword" class="form-label">Confirm New Password</label>
+                      <input type="password" class="form-control" id="modalConfirmPassword" placeholder="Confirm new password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <!-- Preferences section removed as requested -->
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin-profile.js"></script>
+  </body>
+</html>

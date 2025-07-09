@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Academia - User Scores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/scores.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+      <header class="sidebar-header">
+        <div class="sidebar-title">
+          <span>Eco Academia</span>
+        </div>
+      </header>
+      <nav class="sidebar-content">
+        <section class="sidebar-section">
+          <ul role="list">
+            <li>
+              <a href="dashboard.html"><span class="icon" aria-hidden="true">⬜</span> Dashboard</a>
+            </li>
+            <li>
+              <a href="users.html"><span class="icon" aria-hidden="true">👤</span> Users</a>
+            </li>
+            <li>
+              <a href="quiz-manager.html"><span class="icon" aria-hidden="true">📋</span> Quiz Manager</a>
+            </li>
+            <li class="active">
+              <a href="scores.html" aria-current="page"><span class="icon" aria-hidden="true">🏆</span> User Scores</a>
+            </li>
+          </ul>
+        </section>
+      </nav>
+      <footer class="sidebar-bottom">
+        <a href="admin-profile.html" class="sidebar-profile">
+          <div class="sidebar-profile-img">
+            <div class="profile-icon" aria-label="Admin Profile">A</div>
+          </div>
+          <div class="sidebar-profile-info">
+            <span class="sidebar-profile-name">Admin Account</span>
+            <span class="sidebar-profile-email">admin@eco-academia.com</span>
+          </div>
+        </a>
+      </footer>
+    </aside>
+
+    <main class="main-content" role="main">
+      <div class="container-fluid">
+        <header class="row">
+          <div class="col-12">
+            <h1>User Scores & Rankings</h1>
+          </div>
+        </header>
+
+        <!-- Search Section -->
+        <section class="row controls-section">
+          <div class="col-md-6 col-sm-12">
+            <div class="search-container">
+              <label for="user-search" class="form-label">Search Users</label>
+              <input type="text" id="user-search" class="form-control search-input" 
+                     placeholder="Search by username..."
+                     aria-describedby="search-help">
+              <small id="search-help" class="form-text">Search through all user records</small>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statistics Cards -->
+        <section class="row stats-section">
+          <div class="col-md-6 col-sm-12">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="stat-content">
+                  <h3 id="avg-score">87.5</h3>
+                  <p>Average Score</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="stat-content">
+                  <h3 id="completion-rate">76%</h3>
+                  <p>Completion Rate</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tabbed Scores Section -->
+        <section class="row table-section">
+          <div class="col-12">
+            <div class="card table-card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>User Scores Leaderboard</h5>
+                <div class="table-controls">
+                  <button class="btn btn-outline-primary btn-sm" id="export-btn">
+                    Export Data
+                  </button>
+                  <button class="btn btn-primary btn-sm" id="refresh-btn">
+                    Refresh
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- Tab Navigation -->
+                <ul class="nav nav-tabs mb-3" id="scoresTabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz-scores" type="button" role="tab" aria-controls="quiz-scores" aria-selected="true">
+                      Quiz Scores
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="minigame-tab" data-bs-toggle="tab" data-bs-target="#minigame-scores" type="button" role="tab" aria-controls="minigame-scores" aria-selected="false">
+                      Minigame Scores
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="overall-tab" data-bs-toggle="tab" data-bs-target="#overall-scores" type="button" role="tab" aria-controls="overall-scores" aria-selected="false">
+                      Overall Rankings
+                    </button>
+                  </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="scoresTabContent">
+                  <!-- Quiz Scores Tab -->
+                  <div class="tab-pane fade show active" id="quiz-scores" role="tabpanel" aria-labelledby="quiz-tab">
+                    <div class="table-responsive">
+                      <table class="table scores-table" id="quiz-table">
+                        <thead>
+                          <tr>
+                            <th>
+                              <button class="sort-btn" data-sort="rank" data-table="quiz">
+                                Rank
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="username" data-table="quiz">
+                                Username
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz1" data-table="quiz">
+                                Ecology Basics
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz2" data-table="quiz">
+                                Climate Change
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz3" data-table="quiz">
+                                Renewable Energy
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz4" data-table="quiz">
+                                Water Conservation
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz5" data-table="quiz">
+                                Sustainable Living
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="average" data-table="quiz">
+                                Average
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="quiz-tbody">
+                          <!-- Quiz rows will be populated by JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- Minigame Scores Tab -->
+                  <div class="tab-pane fade" id="minigame-scores" role="tabpanel" aria-labelledby="minigame-tab">
+                    <div class="table-responsive">
+                      <table class="table scores-table" id="minigame-table">
+                        <thead>
+                          <tr>
+                            <th>
+                              <button class="sort-btn" data-sort="rank" data-table="minigame">
+                                Rank
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="username" data-table="minigame">
+                                Username
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="recycling" data-table="minigame">
+                                Recycling Hero
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="energy" data-table="minigame">
+                                Energy Saver
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="water" data-table="minigame">
+                                Water Guardian
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="builder" data-table="minigame">
+                                Eco Builder
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="carbon" data-table="minigame">
+                                Carbon Fighter
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="average" data-table="minigame">
+                                Average
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="minigame-tbody">
+                          <!-- Minigame rows will be populated by JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- Overall Rankings Tab -->
+                  <div class="tab-pane fade" id="overall-scores" role="tabpanel" aria-labelledby="overall-tab">
+                    <div class="table-responsive">
+                      <table class="table scores-table" id="overall-table">
+                        <thead>
+                          <tr>
+                            <th>
+                              <button class="sort-btn" data-sort="rank" data-table="overall">
+                                Rank
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="username" data-table="overall">
+                                Username
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="quiz-total" data-table="overall">
+                                Quiz Total
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="minigame-total" data-table="overall">
+                                Minigame Total
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="total-points" data-table="overall">
+                                Total Points
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>
+                              <button class="sort-btn" data-sort="completion" data-table="overall">
+                                Completion
+                                <span class="sort-arrow">▲</span>
+                              </button>
+                            </th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="overall-tbody">
+                          <!-- Overall rows will be populated by JavaScript -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- User Score Details Modal -->
+    <div class="modal fade" id="userScoreModal" tabindex="-1" aria-labelledby="userScoreModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="userScoreModalLabel">User Score Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="score-modal-body">
+            <!-- User score details will be populated by JavaScript -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scores.js"></script>
+  </body>
+</html>

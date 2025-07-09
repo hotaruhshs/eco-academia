@@ -311,6 +311,19 @@ body::after {
   border: 1px solid #cbd5e1;
 }
 
+/* Style for sidebar-profile as a link */
+a.sidebar-profile {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  cursor: pointer;
+}
+
+a.sidebar-profile:hover {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
 .sidebar-profile-img {
   width: 32px;
   height: 32px;

@@ -1,0 +1,922 @@
+/* User Scores Page Styles */
+
+.page-description {
+  color: #6c757d;
+  margin-bottom: 2rem;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Search and Form Inputs */
+.search-container,
+.filter-container {
+  margin-bottom: 12px;
+}
+
+.search-input {
+  border-radius: 0 !important;
+  border: 2px solid #334155 !important;
+  transition: border-color 0.3s ease;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  padding: 12px !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+}
+
+.search-input:focus {
+  border-color: #10b981 !important;
+  box-shadow: 2px 2px 0 #10b981 !important;
+  outline: none !important;
+}
+
+.form-label {
+  font-size: 10px !important;
+  font-weight: 600;
+  color: #64748b !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 8px !important;
+}
+
+.form-text {
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  color: #94a3b8 !important;
+  margin-top: 4px !important;
+}
+
+.form-select {
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  padding: 12px !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  box-shadow: 2px 2px 0 #cbd5e1 !important;
+}
+
+.form-select:focus {
+  border-color: #10b981 !important;
+  box-shadow: 2px 2px 0 #10b981 !important;
+  outline: none !important;
+}
+
+
+
+.sort-btn {
+  background: none !important;
+  border: none !important;
+  color: inherit;
+  font-weight: inherit;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.sort-btn:hover {
+  color: #10b981 !important;
+}
+
+.sort-arrow {
+  font-size: 8px !important;
+  transition: transform 0.3s ease;
+}
+
+.sort-btn.desc .sort-arrow {
+  transform: rotate(180deg);
+}
+
+/* Rank Badge */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px !important;
+  height: 24px !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0 !important;
+  font-weight: bold;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+}
+
+.rank-badge.rank-1 {
+  background: #ffd700 !important;
+  color: #b8860b !important;
+  border-color: #b8860b !important;
+}
+
+.rank-badge.rank-2 {
+  background: #c0c0c0 !important;
+  color: #666 !important;
+  border-color: #666 !important;
+}
+
+.rank-badge.rank-3 {
+  background: #cd7f32 !important;
+  color: #8b4513 !important;
+  border-color: #8b4513 !important;
+}
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  text-align: left !important;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  color: #1e293b !important;
+  margin: 0;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+.user-email {
+  font-size: 8px !important;
+  color: #64748b !important;
+  margin: 0;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Score Cells */
+.score-cell {
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+}
+
+.score-value {
+  display: block;
+  font-size: 10px !important;
+  color: #1e293b !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+.score-badge {
+  display: inline-block;
+  padding: 2px 4px !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0 !important;
+  font-size: 8px !important;
+  font-weight: 500;
+  margin-top: 4px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  background: #ffffff !important;
+}
+
+/* Score badge colors */
+.score-excellent {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+  border-color: #166534 !important;
+}
+
+.score-good {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+.score-average {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #92400e !important;
+}
+
+.score-poor {
+  background-color: #fecaca !important;
+  color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+.score-na {
+  color: #64748b !important;
+  font-style: italic;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Total Score Column */
+.total-score {
+  font-size: 10px !important;
+  font-weight: bold;
+  color: #10b981 !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+.total-score .score-breakdown {
+  font-size: 8px !important;
+  color: #64748b !important;
+  font-weight: normal;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Action Buttons - Match users page exactly */
+.action-btn {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+  padding: 8px !important;
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-right: 4px !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+}
+
+.action-btn:hover {
+  background: #f1f5f9 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0 #334155 !important;
+}
+
+.action-btn.view {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+.action-btn.view svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: inline-block !important;
+}
+
+/* Tab Styling */
+.nav-tabs {
+  border-bottom: 2px solid #e2e8f0 !important;
+  margin-bottom: 1.5rem;
+  border-radius: 0 !important;
+}
+
+.nav-tabs .nav-link {
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  color: #64748b !important;
+  font-weight: 500;
+  padding: 12px 16px !important;
+  margin-right: 4px !important;
+  transition: all 0.3s ease;
+  background: #ffffff !important;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #10b981 !important;
+  color: #10b981 !important;
+  background-color: #f0fdf4 !important;
+}
+
+.nav-tabs .nav-link.active {
+  background: #10b981 !important;
+  color: white !important;
+  border-color: #10b981 !important;
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active:hover {
+  color: white !important;
+  background: #059669 !important;
+  border-color: #059669 !important;
+}
+
+.tab-pane {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tab-specific table adjustments */
+#quiz-table th,
+#minigame-table th,
+#overall-table th {
+  font-size: 8px !important;
+  padding: 12px 8px !important;
+}
+
+#quiz-table td,
+#minigame-table td,
+#overall-table td {
+  padding: 18px 12px !important;
+  font-size: 10px !important;
+}
+
+/* Quiz-specific styling */
+.quiz-score {
+  font-weight: 600;
+  color: #1e293b !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+}
+
+.quiz-na {
+  color: #64748b !important;
+  font-style: italic;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Minigame-specific styling */
+.minigame-score {
+  font-weight: 600;
+  color: #1e293b !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+}
+
+.minigame-na {
+  color: #64748b !important;
+  font-style: italic;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+/* Overall scores styling */
+.total-quiz-score {
+  color: #3b82f6 !important;
+  font-weight: 600;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+}
+
+.total-minigame-score {
+  color: #10b981 !important;
+  font-weight: 600;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 10px !important;
+}
+
+.completion-badge {
+  display: inline-block;
+  padding: 2px 4px !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0 !important;
+  font-size: 8px !important;
+  font-weight: 500;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  background: #ffffff !important;
+}
+
+.completion-excellent {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+  border-color: #166534 !important;
+}
+
+.completion-good {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+.completion-average {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+  border-color: #92400e !important;
+}
+
+.completion-poor {
+  background-color: #fecaca !important;
+  color: #dc2626 !important;
+  border-color: #dc2626 !important;
+}
+
+/* Modal Styles */
+.modal-xl .modal-body {
+  padding: 2rem;
+}
+
+.score-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.score-detail-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #28a745;
+}
+
+.score-detail-card h6 {
+  color: #495057;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.detail-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Progress Bars */
+.progress-container {
+  margin-top: 1rem;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+  }
+  
+  .rank-badge {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .stat-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .score-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .table-controls .btn {
+    font-size: 0.75rem;
+  }
+  
+  .controls-section .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Animation for loading */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Highlight for search results */
+.highlight {
+  background-color: #fff3cd;
+  padding: 0.1rem 0.2rem;
+  border-radius: 2px;
+}
+
+/* Main content layout to match users page exactly */
+.main-content {
+  margin-left: 260px !important;
+  padding: 32px !important;
+  max-width: none !important;
+  width: calc(100vw - 260px) !important;
+  box-sizing: border-box !important;
+  background: #f0f4f8 !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+}
+
+.main-content h1 {
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 18px !important;
+  color: #1e293b !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.container-fluid {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  padding-bottom: 0 !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  max-height: 100vh !important;
+}
+
+/* Controls Section */
+.controls-section {
+  margin-bottom: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Statistics Cards */
+.stats-section {
+  margin-bottom: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+.stat-card {
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #3b82f6, 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+  background: #ffffff !important;
+  margin-bottom: 8px !important;
+  height: 90px !important;
+}
+
+.stat-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0 #3b82f6, 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stat-card .card-body {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: 10px !important;
+}
+
+.stat-content h3 {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  margin: 0;
+  color: #1e293b !important;
+  font-family: 'Press Start 2P', monospace !important;
+}
+
+.stat-content p {
+  margin: 0;
+  color: #64748b !important;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-top: 6px !important;
+}
+
+/* Table Section */
+.table-section {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  max-height: calc(100vh - 180px) !important;
+}
+
+.table-card {
+  border: 2px solid #334155 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #f59e0b, 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  background: #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  min-height: 0 !important;
+  max-height: calc(100vh - 240px) !important;
+  transition: all 0.2s ease !important;
+}
+
+.table-card:hover {
+  box-shadow: 6px 6px 0 #f59e0b, 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+  transform: translate(-2px, -2px) !important;
+}
+
+.table-card .card-header {
+  background: #f8fafc !important;
+  color: #1e293b !important;
+  border-radius: 0 !important;
+  padding: 12px 24px !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  flex-shrink: 0 !important;
+}
+
+.table-card .card-header h5 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.table-controls {
+  display: flex;
+  gap: 8px !important;
+}
+
+.table-controls .btn {
+  border-radius: 0 !important;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  padding: 8px 12px !important;
+  border: 2px solid #334155 !important;
+  background: #ffffff !important;
+  color: #1e293b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.2s ease !important;
+}
+
+.table-controls .btn:hover {
+  background: #f1f5f9 !important;
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0 #334155 !important;
+}
+
+.card-body {
+  padding: 0 !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: 100% !important;
+}
+
+.nav-tabs {
+  flex-shrink: 0 !important;
+  margin: 0 24px !important;
+  padding-top: 24px !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+.tab-content {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  height: 100% !important;
+}
+
+.tab-pane {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.table-responsive {
+  flex-grow: 1 !important;
+  overflow-y: auto !important;
+  margin-bottom: 0 !important;
+  padding: 0 24px 24px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  max-height: calc(100vh - 280px) !important;
+  min-height: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+/* Scores Table - Match users table exactly */
+.scores-table {
+  margin-bottom: 0;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  color: #1e293b !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: table !important;
+  table-layout: fixed !important;
+}
+
+.scores-table thead {
+  display: table-header-group !important;
+}
+
+.scores-table tbody {
+  display: table-row-group !important;
+}
+
+.scores-table tbody tr {
+  display: table-row !important;
+  min-height: 70px !important;
+}
+
+.scores-table thead tr {
+  display: table-row !important;
+  min-height: 60px !important;
+}
+
+.scores-table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.scores-table th {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  font-weight: 600;
+  color: #1e293b !important;
+  vertical-align: middle;
+  padding: 18px 12px !important;
+  font-size: 8px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  display: table-cell !important;
+  text-align: center !important;
+  width: auto !important;
+}
+
+.scores-table td {
+  vertical-align: middle;
+  padding: 18px 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  font-size: 10px !important;
+  font-family: 'Press Start 2P', monospace !important;
+  text-align: center !important;
+  display: table-cell !important;
+  width: auto !important;
+}
+
+/* Specific column widths for better space allocation */
+.scores-table th:nth-child(1),
+.scores-table td:nth-child(1) {
+  width: 8% !important; /* Rank column - smaller */
+}
+
+.scores-table th:nth-child(2),
+.scores-table td:nth-child(2) {
+  width: 20% !important; /* Username column - larger */
+  text-align: left !important;
+}
+
+/* Actions column for all tables */
+.scores-table th:last-child,
+.scores-table td:last-child {
+  width: 8% !important; /* Actions column */
+  text-align: center !important;
+}
+
+/* Quiz table specific widths */
+#quiz-table th:nth-child(3),
+#quiz-table td:nth-child(3),
+#quiz-table th:nth-child(4),
+#quiz-table td:nth-child(4),
+#quiz-table th:nth-child(5),
+#quiz-table td:nth-child(5),
+#quiz-table th:nth-child(6),
+#quiz-table td:nth-child(6),
+#quiz-table th:nth-child(7),
+#quiz-table td:nth-child(7) {
+  width: 11% !important; /* Quiz score columns */
+}
+
+#quiz-table th:nth-child(8),
+#quiz-table td:nth-child(8) {
+  width: 12% !important; /* Average column */
+}
+
+/* Minigame table specific widths */
+#minigame-table th:nth-child(3),
+#minigame-table td:nth-child(3),
+#minigame-table th:nth-child(4),
+#minigame-table td:nth-child(4),
+#minigame-table th:nth-child(5),
+#minigame-table td:nth-child(5),
+#minigame-table th:nth-child(6),
+#minigame-table td:nth-child(6),
+#minigame-table th:nth-child(7),
+#minigame-table td:nth-child(7) {
+  width: 11% !important; /* Minigame score columns */
+}
+
+#minigame-table th:nth-child(8),
+#minigame-table td:nth-child(8) {
+  width: 12% !important; /* Average column */
+}
+
+/* Overall table specific widths */
+#overall-table th:nth-child(3),
+#overall-table td:nth-child(3),
+#overall-table th:nth-child(4),
+#overall-table td:nth-child(4) {
+  width: 18% !important; /* Quiz/Minigame total columns */
+}
+
+#overall-table th:nth-child(5),
+#overall-table td:nth-child(5) {
+  width: 18% !important; /* Total points column */
+}
+
+#overall-table th:nth-child(6),
+#overall-table td:nth-child(6) {
+  width: 18% !important; /* Completion column */
+}
+
+/* Sort button styles */
+.sort-btn.asc .sort-arrow {
+  transform: rotate(0deg);
+}
+
+.sort-btn.desc .sort-arrow {
+  transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    padding: 16px !important;
+  }
+  
+  .scores-table th {
+    font-size: 6px !important;
+    padding: 8px 4px !important;
+  }
+  
+  .scores-table td {
+    font-size: 8px !important;
+    padding: 12px 8px !important;
+  }
+  
+  .username {
+    font-size: 8px !important;
+  }
+  
+  .user-email {
+    font-size: 6px !important;
+  }
+}
