@@ -1,0 +1,126 @@
+### **1. Overview**
+
+The **Eco Academia Admin Panel** is a web-based management system for the *Eco Academia* interactive learning game on climate change literacy. It allows the super admin to manage in-game content, track player statistics, and maintain educational resources. The system uses **Firebase** for real-time database operations, ensuring instant updates between the admin panel and the game.
+
+---
+
+### **2. Objectives**
+
+* Provide an intuitive interface for managing game content such as quizzes,
+* Track player performance and generate gameplay statistics.
+* Allow easy creation and editing of in-game materials without coding knowledge.
+* Ensure secure access for the super admin only, backed by Firebase Authentication.
+
+---
+
+### **3. Key Features**
+
+#### **3.1 User Management**
+
+* Create, update, deactivate the super admin account (for maintenance).
+* View login history and account activity (stored in Firebase).
+
+#### **3.2 Content Management**
+
+* Manage quiz questions and answer keys.
+* Organize content by difficulty level or category.
+
+#### **3.3 Player Progress Tracking**
+
+* View individual player scores and gameplay history from Firebase Realtime Database / Firestore.
+* Generate leaderboard rankings in real-time.
+* Export game statistics in CSV or PDF format.
+
+#### **3.4 Game Data Management**
+
+* make the quizzes in the game cutomizable.
+* Monitor gameplay trends (e.g., most played levels, most common wrong answers).
+
+#### **3.5 System Settings**
+
+* Manage categories (e.g., topics, difficulty levels).
+* Update branding elements (logos, color themes).
+* Backup data using Firebase export tools.
+
+#### **3.6 Security**
+
+* Super admin–only access via Firebase Authentication.
+* Encrypted passwords stored securely in Firebase.
+* Automatic session logout after inactivity.
+
+---
+
+### **4. User Roles**
+
+| Role            | Description                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Super Admin** | Has full control over the system, including content management, game settings, player tracking, and Firebase database management. |
+
+---
+
+### **5. Technical Requirements**
+
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Firebase Functions (optional for server-side logic)
+* **Database:** Firebase Realtime Database or Firestore
+* **Authentication:** Firebase Authentication
+* **Hosting:** Firebase Hosting or web server with HTTPS support
+* **Browsers Supported:** Chrome, Edge, Firefox
+
+---
+
+### **6. Assumptions**
+
+* Admin panel is only accessible to the super admin.
+* Internet connection is required for access.
+* Players do not have direct access to the admin panel.
+
+---
+
+### **7. Constraints**
+
+* Must be compatible with *Eco Academia* game data stored in Firebase.
+* Must handle up to **500 player records** without performance degradation.
+* Must comply with basic data privacy standards.
+
+---
+
+### **8. Success Metrics**
+
+* Admin can add/edit content without technical help.
+* Game statistics can be generated in under **5 seconds**.
+* Real-time updates between the admin panel and game with no noticeable delay.
+
+---
+
+### **9. User Flow Diagram**
+
+```mermaid
+graph TD
+    A[Start] --> B(Login Page);
+    B -- Credentials --> C{Firebase Auth};
+    C -- Success --> D[Admin Dashboard];
+    C -- Failure --> B;
+
+    D --> E[Quiz Management];
+    D --> F[User/Player Management];
+    D --> G[Score Tracking];
+    D --> H[Admin Profile];
+    D --> I(Logout);
+
+    E --> E1[View Quizzes];
+    E --> E2[Add/Edit/Delete Quiz];
+    E2 -- Save changes --> E1;
+
+    F --> F1[View Player List];
+    F1 -- Select Player --> F2[View Player Details];
+
+    G --> G1[View Leaderboard];
+    G --> G2[View Gameplay Statistics];
+    G2 --> G3[Export Statistics];
+
+    H --> H1[View/Edit Profile];
+    H1 -- Update --> H;
+
+    I --> A;
+```

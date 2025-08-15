@@ -425,6 +425,17 @@
   gap: 8px !important;
 }
 
+.progress-bar {
+  width: 60px !important;
+  height: 12px !important;
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
 .progress-bar-custom {
   width: 60px !important;
   height: 12px !important;
@@ -459,13 +470,27 @@
   color: #64748b !important;
   min-width: 32px !important;
   text-align: right !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-weight: bold !important;
+  text-shadow: 1px 1px 0 #ffffff !important;
 }
 
 /* Action Buttons */
-.action-btn {
+.action-buttons {
+  display: flex !important;
+  gap: 4px !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.action-btn, .view-user-btn, .edit-user-btn, .delete-user-btn {
   font-family: 'Press Start 2P', monospace !important;
-  font-size: 10px !important; /* Reduced to match consistent small size */
-  padding: 8px !important; /* Square padding for icons */
+  font-size: 10px !important;
+  padding: 6px !important;
   border: 2px solid #334155 !important;
   border-radius: 0 !important;
   background: #ffffff !important;
@@ -474,14 +499,44 @@
   transition: all 0.2s ease !important;
   text-transform: uppercase !important;
   letter-spacing: 1px !important;
-  margin-right: 4px !important; /* Reduced margin for closer spacing */
-  width: 32px !important; /* Fixed width for consistent size */
-  height: 32px !important; /* Fixed height for square buttons */
+  width: 28px !important;
+  height: 28px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  text-indent: -9999px !important; /* Hide any text content */
-  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.action-btn:hover, .view-user-btn:hover, .edit-user-btn:hover, .delete-user-btn:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 2px 2px 0 #334155 !important;
+}
+
+.view-user-btn {
+  border-color: #3b82f6 !important;
+  color: #3b82f6 !important;
+}
+
+.view-user-btn:hover {
+  background: #eff6ff !important;
+}
+
+.edit-user-btn {
+  border-color: #f59e0b !important;
+  color: #f59e0b !important;
+}
+
+.edit-user-btn:hover {
+  background: #fffbeb !important;
+}
+
+.delete-user-btn {
+  border-color: #ef4444 !important;
+  color: #ef4444 !important;
+}
+
+.delete-user-btn:hover {
+  background: #fef2f2 !important;
 }
 
 .action-btn:hover {
@@ -781,63 +836,169 @@
   box-shadow: 4px 4px 0 #047857 !important;
 }
 
+/* Mobile Header - Import from dashboard.css styles */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  border-bottom: 2px solid #334155;
+  z-index: 1050;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1100;
+  background: #10b981;
+  border: 2px solid #334155;
+  box-shadow: 2px 2px 0 #334155;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  background: #059669;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #334155;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 2px 0;
+  background: #ffffff;
+  border-radius: 0;
+  transition: 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Responsive Design */
-@media (max-width: 768px) {
-  .mobile-menu-toggle {
-    display: flex !important;
+@media (max-width: 900px) {
+  .mobile-header {
+    display: flex;
   }
   
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+    width: 100vw !important;
+    padding: 80px 16px 16px 16px !important; /* Account for mobile header */
+    min-height: calc(100vh - 60px) !important;
+    margin-top: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
   .controls-section .col-md-3,
   .controls-section .col-md-6 {
     margin-bottom: 16px !important;
   }
   
-  .main-content {
-    margin-left: 0 !important;
-    padding: 20px 10px !important;
-  }
-  
   .users-table-card {
     height: 60vh !important;
     min-height: 300px !important;
+    max-height: calc(100vh - 300px) !important;
   }
   
   .stat-card {
-    height: 120px !important;
+    height: 100px !important;
   }
   
   .stat-card .card-body {
-    padding: 16px !important;
+    padding: 12px !important;
   }
   
   .stat-card .card-title {
-    font-size: 8px !important;
+    font-size: 7px !important;
   }
   
   .stat-value {
-    font-size: 18px !important;
+    font-size: 16px !important;
   }
   
   .users-table {
-    font-size: 8px !important;
+    font-size: 7px !important;
   }
   
   .users-table th,
   .users-table td {
-    padding: 8px 6px !important;
+    padding: 6px 4px !important;
   }
   
   .action-btn {
-    font-size: 10px !important;
-    padding: 6px !important;
-    width: 28px !important;
-    height: 28px !important;
+    font-size: 8px !important;
+    padding: 4px !important;
+    width: 24px !important;
+    height: 24px !important;
   }
   
   .card-header {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 8px !important;
+    padding: 8px 16px !important;
+  }
+  
+  .add-user-btn {
+    font-size: 8px !important;
+    padding: 6px 10px !important;
+  }
+  
+  .search-input, .status-filter, .progress-filter {
+    font-size: 8px !important;
+    padding: 8px !important;
+  }
+  
+  .form-label {
+    font-size: 8px !important;
+  }
+  
+  .table-responsive {
+    max-height: calc(100vh - 350px) !important;
   }
 }
 
@@ -873,5 +1034,93 @@
   
   .results-info {
     font-size: 7px !important;
+  }
+}
+
+/* Pagination Styles */
+.pagination-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 20px 0 !important;
+}
+
+.pagination-controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
+.pagination-btn {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #475569 !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  padding: 8px 12px !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  border-radius: 0 !important;
+  min-width: 40px !important;
+  text-align: center !important;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background: #e2e8f0 !important;
+  border-color: #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+.pagination-btn.active {
+  background: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.pagination-btn.disabled {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #94a3b8 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.pagination-ellipsis {
+  color: #64748b !important;
+  font-family: 'Press Start 2P', monospace !important;
+  font-size: 8px !important;
+  padding: 8px 4px !important;
+}
+
+/* Pagination responsive styles */
+@media (max-width: 768px) {
+  .pagination-btn {
+    font-size: 7px !important;
+    padding: 6px 8px !important;
+    min-width: 32px !important;
+  }
+  
+  .pagination-ellipsis {
+    font-size: 7px !important;
+    padding: 6px 2px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .pagination-controls {
+    gap: 4px !important;
+  }
+  
+  .pagination-btn {
+    font-size: 6px !important;
+    padding: 4px 6px !important;
+    min-width: 28px !important;
+  }
+  
+  .pagination-ellipsis {
+    font-size: 6px !important;
+    padding: 4px 2px !important;
   }
 }

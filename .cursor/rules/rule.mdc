@@ -1,9 +1,6 @@
 ---
-description: "Coding standards, domain knowledge, and preferences for the Eco Academia Admin Panel project."
-globs:
-  - "**"
 alwaysApply: true
-
+---
 # Rules for Eco Academia Project
 
 ## General Project Guidelines
@@ -28,7 +25,17 @@ alwaysApply: true
     - Update the status of the corresponding task in `project-task-docs/main-task-list.mdc`.
     - Create a new, descriptively named markdown file in `task-completion-logs/` detailing the work done (task description, date, summary, code snippets, challenges).
 
-3.  **Reference Project Documentation:**
+3.  **Task Logging Requirement:** For EVERY task I work on, I *MUST* create a detailed log entry in the `task-completion-logs/` directory. Each log should include:
+    - **Task ID/Name:** A unique identifier for the task
+    - **Date and Time:** When the task was completed
+    - **Task Description:** What was requested and accomplished
+    - **Files Modified:** List of all files that were created, modified, or deleted
+    - **Code Changes Summary:** Brief description of the main changes made
+    - **Challenges Encountered:** Any issues faced and how they were resolved
+    - **Testing Notes:** What was tested and any issues found
+    - **Next Steps:** Any follow-up work or recommendations
+
+4.  **Reference Project Documentation:**
     - For high-level project scope, tech stack, or architecture, I *MUST* refer to `project-task-docs/project-overview.mdc`.
     - For detailed features, user roles, and user flow, I *MUST* refer to `project-task-docs/taskflow-prd.mdc`.
 

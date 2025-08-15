@@ -1,36 +1,58 @@
 // dashboard.js
-// Add interactivity here if needed
+// Dashboard functionality for Firebase integration
 console.log('Dashboard loaded');
 
 // Chart.js sample bar chart for progress
 window.addEventListener('DOMContentLoaded', function () {
-  // Hamburger menu functionality
-  const hamburger = document.getElementById('hamburgerMenu');
-  const sidebarLinks = document.getElementById('sidebarLinks');
-  if (hamburger && sidebarLinks) {
-    hamburger.addEventListener('click', function () {
-      sidebarLinks.classList.toggle('active');
+  // Mobile hamburger menu functionality
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const sidebar = document.getElementById('sidebar');
+  
+  if (mobileMenuToggle && sidebar) {
+    mobileMenuToggle.addEventListener('click', function () {
+      sidebar.classList.toggle('open');
+      mobileMenuToggle.classList.toggle('active');
+      
+      // Add/remove body scroll lock when mobile menu is open
+      if (sidebar.classList.contains('open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     });
-    hamburger.addEventListener('keydown', function(e) {
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900 && 
+          !sidebar.contains(e.target) && 
+          !mobileMenuToggle.contains(e.target) &&
+          sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+        mobileMenuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 900) {
+        sidebar.classList.remove('open');
+        mobileMenuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // Keyboard support for hamburger menu
+    mobileMenuToggle.addEventListener('keydown', function(e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        sidebarLinks.classList.toggle('active');
+        mobileMenuToggle.click();
       }
     });
   }
 
-  if (document.getElementById('progressChart')) {
-    const ctx = document.getElementById('progressChart').getContext('2d');
-    // Load Chart.js from CDN if not present
-    if (typeof Chart === 'undefined') {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
-      script.onload = () => renderChart(ctx);
-      document.head.appendChild(script);
-    } else {
-      renderChart(ctx);
-    }
-  }
+  // Initialize dashboard data from Firebase
+  initializeDashboardData();
 
   // Quiz progress bar animation
   const quizProgressBar = document.querySelector('.quiz-progress-fill');
@@ -148,14 +170,60 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+// Initialize dashboard data from Firebase
+function initializeDashboardData() {
+  // TODO: Replace with Firebase data fetching
+  // Example structure:
+  // firebase.firestore().collection('dashboard-stats').doc('overview').get()
+  //   .then((doc) => {
+  //     if (doc.exists) {
+  //       const data = doc.data();
+  //       updateDashboardStats(data);
+  //       renderChart(data.quizPerformance);
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error fetching dashboard data:", error);
+  //   });
+
+  // Placeholder for now
+  console.log('Dashboard data initialization - Firebase integration pending');
+  
+  // Initialize chart with placeholder data
+  if (document.getElementById('progressChart')) {
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    // Load Chart.js from CDN if not present
+    if (typeof Chart === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+      script.onload = () => renderChart(ctx);
+      document.head.appendChild(script);
+    } else {
+      renderChart(ctx);
+    }
+  }
+}
+
+// Update dashboard statistics
+function updateDashboardStats(data) {
+  // TODO: Update dashboard statistics with Firebase data
+  // Example:
+  // document.getElementById('total-users').textContent = data.totalUsers;
+  // document.getElementById('active-quizzes').textContent = data.activeQuizzes;
+  // document.getElementById('avg-score').textContent = data.averageScore + '%';
+  // document.getElementById('completion-rate').textContent = data.completionRate + '%';
+}
+
 function renderChart(ctx) {
+  // TODO: Replace with dynamic data from Firebase
+  // For now, render empty chart structure
   new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Quiz 1', 'Quiz 2', 'Quiz 3', 'Quiz 4'],
       datasets: [{
         label: 'Average Score',
-        data: [85, 90, 78, 92],
+        data: [0, 0, 0, 0], // Placeholder data
         backgroundColor: '#a8e063',
         borderColor: '#388e3c',
         borderWidth: 2

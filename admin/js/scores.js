@@ -606,6 +606,41 @@ let activeTab = 'quiz';
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Functionality
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.getElementById('sidebar');
+    
+    if (mobileMenuToggle && sidebar) {
+        mobileMenuToggle.addEventListener('click', function () {
+            sidebar.classList.toggle('open');
+            mobileMenuToggle.classList.toggle('active');
+            
+            if (sidebar.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 900 && 
+                !sidebar.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target) &&
+                sidebar.classList.contains('open')) {
+                sidebar.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900) {
+                sidebar.classList.remove('open');
+                mobileMenuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
   initializeScoresPage();
   renderStatistics();
   renderAllTables();

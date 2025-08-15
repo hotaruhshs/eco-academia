@@ -1,0 +1,86 @@
+# Eco Academia Admin Panel: Development Task List
+
+This document outlines the step-by-step tasks required to build and deploy the Eco Academia Admin Panel.
+
+### Phase 1: Firebase Setup & Integration
+- [x] **Task 1.1: Create Firebase Project**
+  - [x] Go to the Firebase Console and create a new project.
+- [x] **Task 1.2: Register Web App**
+  - [x] In the project dashboard, register a new web application to get the configuration details.
+- [x] **Task 1.3: Configure Firebase SDK**
+  - [x] Create `admin/js/firebase-config.js` to store the Firebase `firebaseConfig` object.
+  - [x] Add the Firebase SDK scripts (App, Auth, Firestore) and the `firebase-config.js` script to all HTML files:
+    - [x] `index.html`
+    - [x] `admin/dashboard.html`
+    - [x] `admin/admin-profile.html`
+    - [x] `admin/quiz-manager.html`
+    - [x] `admin/scores.html`
+    - [x] `admin/users.html`
+- [x] **Task 1.4: Enable Firebase Services**
+  - [x] In the Firebase Console, enable **Authentication** (with Email/Password provider).
+  - [x] In the Firebase Console, enable **Realtime Database** and set up initial security rules for development.
+
+### Phase 2: Implement Authentication
+- [x] **Task 2.1: Login Functionality**
+  - [x] In `admin/js/login.js`, implement the `signInWithEmailAndPassword` method to handle form submission on `index.html`.
+  - [x] On successful login, redirect the user to `admin/dashboard.html`.
+  - [x] Display appropriate error messages for failed login attempts.
+- [x] **Task 2.2: Logout Functionality**
+  - [x] Add a "Logout" button in the shared sidebar across all admin pages.
+  - [x] In `admin/js/auth-guard.js` (shared script), implement the `signOut` method.
+  - [x] On successful logout, redirect the user to `index.html`.
+- [x] **Task 2.3: Implement Auth Guard**
+  - [x] Create a new script, `admin/js/auth-guard.js`, to protect admin pages.
+  - [x] Use `onAuthStateChanged` to check if a user is logged in. If not, redirect to `index.html`.
+  - [x] Include this script in all HTML files inside the `admin/` directory.
+
+### Phase 3: Build the Dashboard
+- [ ] **Task 3.1: Display Dynamic Stats**
+  - [ ] In `admin/js/dashboard.js`, fetch data from Firestore to populate the dashboard cards (Total Players, Quizzes, etc.).
+  - [ ] Implement real-time listeners (`onSnapshot`) to ensure data is always up-to-date.
+- [ ] **Task 3.2: Populate Recent Activity Feed**
+  - [ ] Query Firestore for recent user sign-ups or quiz completions.
+  - [ ] Dynamically render this data in the "Recent Activity" section of the dashboard.
+
+### Phase 4: Quiz Management
+- [ ] **Task 4.1: Create and Read Quizzes (C/R)**
+  - [ ] In `admin/js/quiz-manager.js`, fetch all quizzes from Firestore and display them in the table on `quiz-manager.html`.
+  - [ ] Implement the "Add New Quiz" modal to save a new quiz document to Firestore.
+- [ ] **Task 4.2: Update and Delete Quizzes (U/D)**
+  - [ ] Add "Edit" and "Delete" buttons to each quiz in the table.
+  - [ ] Implement the "Edit" functionality to pre-fill the modal and update the document in Firestore.
+  - [ ] Implement the "Delete" functionality, including a confirmation prompt, to remove the document from Firestore.
+
+### Phase 5: User Management
+- [x] **Task 5.1: Display Users**
+  - [x] In a new `admin/js/users.js` script, fetch all user records from Firebase Realtime Database.
+  - [x] Display the user data in the table on `users.html`.
+  - [x] Implement search, filter, and sort functionality.
+  - [x] Add user statistics and real-time updates.
+  - [x] Implement add, view, edit, and delete user functionality.
+
+### Phase 6: Scores & Leaderboard
+- [ ] **Task 6.1: Display Scores**
+  - [ ] In `admin/js/scores.js`, create a "scores" collection in Firestore to store player scores.
+  - [ ] Fetch and display the scores, linking them to user data.
+- [ ] **Task 6.2: Implement Leaderboard**
+  - [ ] Sort the scores in descending order to create a leaderboard.
+- [ ] **Task 6.3: Export Data**
+  - [ ] Add a feature to export the scores table as a CSV file.
+
+### Phase 7: Admin Profile Management
+- [ ] **Task 7.1: Display and Update Profile**
+  - [ ] In `admin/js/admin-profile.js`, fetch the current admin's data and display it.
+  - [ ] Allow the admin to update their profile information (e.g., name).
+- [ ] **Task 7.2: Password Management**
+  - [ ] Implement a secure form for the admin to change their password using Firebase Auth functions.
+
+### Phase 8: Final Touches & Deployment
+- [ ] **Task 8.1: Add Session Timeout**
+  - [ ] Implement an inactivity timer that automatically logs the admin out after a certain period.
+- [ ] **Task 8.2: Testing**
+  - [ ] Thoroughly test all features and fix any bugs.
+- [ ] **Task 8.3: Deploy to Firebase Hosting**
+  - [ ] Initialize Firebase Hosting.
+  - [ ] Configure `firebase.json` to point to the correct public directory.
+  - [ ] Run `firebase deploy` to go live.

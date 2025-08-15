@@ -10,9 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="js/firebase-config.js"></script>
   </head>
   <body>
-    <aside class="sidebar" role="navigation" aria-label="Main Navigation">
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-header">
+      <button class="hamburger" id="mobileMenuToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <span class="mobile-title">Eco Academia</span>
+    </div>
+    
+    <aside class="sidebar" role="navigation" aria-label="Main Navigation" id="sidebar">
       <header class="sidebar-header">
         <div class="sidebar-title">
           <span>Eco Academia</span>
@@ -32,6 +47,15 @@
             </li>
             <li>
               <a href="scores.html"><span class="icon" aria-hidden="true">🏆</span> User Scores</a>
+            </li>
+          </ul>
+        </section>
+        <section class="sidebar-section">
+          <ul role="list">
+            <li>
+              <a href="#" onclick="handleLogout()" class="logout-link">
+                <span class="icon" aria-hidden="true">🚪</span> Logout
+              </a>
             </li>
           </ul>
         </section>
@@ -185,6 +209,10 @@
                       </tbody>
                     </table>
                   </div>
+                  <!-- Pagination Controls -->
+                  <div class="pagination-container mt-3">
+                    <div id="pagination-controls" class="pagination-controls"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,29 +236,45 @@
                   <div class="user-detail-card">
                     <h6>User Information</h6>
                     <div class="mb-3">
-                      <label for="add-name" class="form-label">Name *</label>
-                      <input type="text" class="form-control" id="add-name" required>
+                      <label for="add-username" class="form-label">Username *</label>
+                      <input type="text" class="form-control" id="add-username" placeholder="Enter username" required>
                     </div>
                     <div class="mb-3">
                       <label for="add-email" class="form-label">Email *</label>
-                      <input type="email" class="form-control" id="add-email" required>
+                      <input type="email" class="form-control" id="add-email" placeholder="Enter email address" required>
                     </div>
                     <div class="mb-3">
-                      <label for="add-status" class="form-label">Status</label>
-                      <select class="form-select" id="add-status">
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
+                      <label for="add-credentials" class="form-label">Credentials</label>
+                      <select class="form-select" id="add-credentials">
+                        <option value="Independent">Independent</option>
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Admin">Admin</option>
                       </select>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="user-detail-card">
-                    <h6>Information</h6>
+                    <h6>Account Status</h6>
+                    <div class="mb-3">
+                      <label for="add-status" class="form-label">Status</label>
+                      <select class="form-select" id="add-status">
+                        <option value="Logged Out">Logged Out</option>
+                        <option value="Logged In">Logged In</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="add-password" class="form-label">Password *</label>
+                      <input type="password" class="form-control" id="add-password" placeholder="Enter password" required>
+                      <small class="form-text text-muted">Password will be stored securely</small>
+                    </div>
                     <div class="info-note">
                       <small>* Required fields</small>
                       <br>
-                      <small>Other fields will be set to default values</small>
+                      <small>User will be created with default progress and join date</small>
                     </div>
                   </div>
                 </div>
@@ -291,6 +335,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth-guard.js"></script>
     <script src="js/users.js"></script>
   </body>
 </html>

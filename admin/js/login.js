@@ -1,4 +1,4 @@
-// Simulate login for static prototype
+// Login functionality for Firebase integration
 const loginForm = document.getElementById('loginForm');
 const loginMessage = document.getElementById('loginMessage');
 
@@ -37,18 +37,53 @@ if (togglePasswordBtn && passwordInput && eyeIcon) {
 
 loginForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
 
-    // Simulate login: accept any non-empty username/password
-    if (username && password) {
-        loginMessage.style.color = '#388e3c';
-        loginMessage.textContent = 'Login successful! Redirecting...';
-        setTimeout(() => {
-            window.location.href = 'admin/dashboard.html'; // Corrected redirect path
-        }, 1200);
-    } else {
+    // Clear previous messages
+    loginMessage.textContent = '';
+    
+    // Validate inputs
+    if (!email || !password) {
         loginMessage.style.color = '#d32f2f';
-        loginMessage.textContent = 'Please enter both username and password.';
+        loginMessage.textContent = 'Please enter both email and password.';
+        return;
     }
+
+    // Show loading state
+    loginMessage.style.color = '#1976d2';
+    loginMessage.textContent = 'Signing in...';
+
+    // Firebase authentication
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            loginMessage.style.color = '#388e3c';
+            loginMessage.textContent = 'Login successful! Redirecting...';
+            setTimeout(() => {
+                window.location.href = 'admin/dashboard.html';
+            }, 1200);
+        })
+        .catch((error) => {
+            loginMessage.style.color = '#d32f2f';
+            // Provide user-friendly error messages
+            switch (error.code) {
+                case 'auth/user-not-found':
+                    loginMessage.textContent = 'No account found with this email address.';
+                    break;
+                case 'auth/wrong-password':
+                    loginMessage.textContent = 'Incorrect password.';
+                    break;
+                case 'auth/invalid-email':
+                    loginMessage.textContent = 'Please enter a valid email address.';
+                    break;
+                case 'auth/user-disabled':
+                    loginMessage.textContent = 'This account has been disabled.';
+                    break;
+                case 'auth/too-many-requests':
+                    loginMessage.textContent = 'Too many failed attempts. Please try again later.';
+                    break;
+                default:
+                    loginMessage.textContent = 'Login failed: ' + error.message;
+            }
+        });
 });
